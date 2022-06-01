@@ -1,5 +1,9 @@
 package com.saitej.dao;
 
+import com.saitej.model.User;
+import com.saitej.util.DBUtil;
+import com.saitej.util.DateUtil;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,13 +12,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.saitej.model.User;
-import com.saitej.util.DBUtil;
-import com.saitej.util.DateUtil;
-
 public class UserDao {
 	private static final String INSERT_USERS_SQL = "INSERT INTO users"
 			+ "  (name, email, password, role, status,created_date) VALUES " + " (?, ?, ?, ?, ?,?);";
+	private static final String REGISTER_USER =  "INSERT INTO users(name, email, password, role, status,created_date)VALUES(?, ?, ?, ?, ?,?)";
 	private static final String LOGIN_USER = "SELECT * FROM USERS WHERE EMAIL =? AND PASSWORD =? AND STATUS =?";
 	private static final String SELECT_ALL_USERS = "SELECT * FROM USERS";
 	private static final String SELECT_USER_BY_ID = "SELECT ID,NAME,EMAIL,PASSWORD,ROLE,STATUS FROM USERS WHERE ID =?";
@@ -197,4 +198,22 @@ public class UserDao {
 		}
 	}
 
+	public int registerUser(User user) {
+		System.out.println("UserDao.registerUser");
+		int count = 0;
+		Connection con = DBUtil.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement(REGISTER_USER);
+			ps.setString(1, user.getName());
+			ps.setString(2, user.getEmail());
+			ps.setString(3, user.getPassword());
+			ps.setString(4,"General User");
+			ps.setString(5,"Active");
+			ps.setString(6, DateUtil.format(LocalDateTime.now()));
+			count = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
 }

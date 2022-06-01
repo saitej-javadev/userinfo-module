@@ -48,6 +48,7 @@
 									<input type="submit" class="btn btn-lg btn-success btn-block"
 										value="Sign In">
 								</div>
+								<a href="registration-form.jsp" class="link-info">Don't have account?Register here.</a>
 							</div>
 						</fieldset>
 					</form>

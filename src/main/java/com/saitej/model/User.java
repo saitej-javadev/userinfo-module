@@ -115,4 +115,19 @@ public class User {
 	public void setLogin_date(String login_date) {
 		this.login_date = login_date;
 	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", role='" + role + '\'' +
+				", status='" + status + '\'' +
+				", login_date='" + login_date + '\'' +
+				", created_date='" + created_date + '\'' +
+				", updated_date='" + updated_date + '\'' +
+				'}';
+	}
 }
