@@ -8,7 +8,6 @@ public class User {
 	private String password;
 	private String role;
 	private String status;
-	private String login_date;
 	private String created_date;
 	private String updated_date;
 	
@@ -40,14 +39,14 @@ public class User {
 		this.status = status;
 	}
 
-	public User(Long id, String name, String email, String password, String role, String status, String login_date, String created_date, String updated_date) {
+
+	public User(Long id, String name, String email, String password, String role, String status, String created_date, String updated_date) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.role = role;
 		this.status = status;
-		this.login_date = login_date;
 		this.created_date = created_date;
 		this.updated_date = updated_date;
 	}
@@ -108,13 +107,6 @@ public class User {
 		this.updated_date = updated_date;
 	}
 
-	public String getLogin_date() {
-		return login_date;
-	}
-
-	public void setLogin_date(String login_date) {
-		this.login_date = login_date;
-	}
 
 	@Override
 	public String toString() {
@@ -125,7 +117,6 @@ public class User {
 				", password='" + password + '\'' +
 				", role='" + role + '\'' +
 				", status='" + status + '\'' +
-				", login_date='" + login_date + '\'' +
 				", created_date='" + created_date + '\'' +
 				", updated_date='" + updated_date + '\'' +
 				'}';

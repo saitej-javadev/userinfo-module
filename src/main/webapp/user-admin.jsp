@@ -173,7 +173,9 @@
 	
 	
 	<!-- NAVBAR -->
-	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">UserInfo-Module</a>
+
 	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    <ul class="navbar-nav w-100">
 	      <li class="nav-item dropdown ml-auto">
@@ -185,7 +187,8 @@
 	          <a class="dropdown-item" href="logout">Logout</a>
 	        </div>
 	      </li>
-	    </ul>  
+	    </ul>
+
 	  </div>
 	</nav>
 	<br/><br/><br/>
@@ -200,10 +203,10 @@
 					</div>
 					<div class="col-sm-7">
 						<a href="new" class="btn btn-primary"><i class="material-icons">add</i> <span>Add New User</span></a>
-						<a href="list" class="btn btn-primary"><i class="material-icons">refresh</i> <span>Refresh</span></a>						
-						<a href="list" class="btn btn-primary"><i class="material-icons">download</i> <span>Download</span></a>
-						<a href="list" class="btn btn-primary"><i class="material-icons">upload</i> <span>Upload</span></a>
-						<a href="list" class="btn btn-primary"><i class="material-icons">search</i> <span>Search</span></a>
+						<a href="list" class="btn btn-primary"><i class="material-icons">refresh</i> <span></span></a>
+						<a href="download" class="btn btn-primary"><i class="material-icons">download</i> <span></span></a>
+						<a href="list" class="btn btn-primary"><i class="material-icons">upload</i> <span></span></a>
+						<a href="list" class="btn btn-primary"><i class="material-icons">search</i> <span></span></a>
 
 					</div>
                 </div>

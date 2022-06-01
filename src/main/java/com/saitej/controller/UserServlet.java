@@ -2,6 +2,8 @@ package com.saitej.controller;
 
 import com.saitej.dao.UserDao;
 import com.saitej.model.User;
+import com.saitej.util.DownloadUtil;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -64,7 +66,7 @@ public class UserServlet extends HttpServlet {
                     updateUser(request, response);
                     break;
                 case "/download":
-                    updateUser(request, response);
+                    downloadUserList(request, response);
                     break;
                 case "/logout":
                     logoutUser(request, response);
@@ -77,6 +79,16 @@ public class UserServlet extends HttpServlet {
             throw new ServletException(ex);
         }
     }
+
+    private void downloadUserList(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println("UserServlet.downloadUserList");
+        HSSFWorkbook workbook= DownloadUtil.generateDownloadTasksExcel(request);
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition","attachment; filename=USERS-LIST.xls");
+        workbook.write(response.getOutputStream());
+    }
+
+
 
     private void registerUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = null;

@@ -94,7 +94,9 @@ public class UserDao {
 				String password = rs.getString("password");
 				String role = rs.getString("role");
 				String status = rs.getString("status");
-				users.add(new User(id, name, email, password, role, status));
+				String created_date = rs.getString("created_date");
+				String updated_date = rs.getString("updated_date");
+				users.add(new User(id, name, email, password, role, status,created_date,updated_date));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
