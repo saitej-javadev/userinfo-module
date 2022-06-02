@@ -1,0 +1,84 @@
+2022-06-02 23:01:33 INFO  UserDao insertUser :64 - in insertUser method
+2022-06-02 23:01:33 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:01:33 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:01:34 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:01:34 DEBUG UserServlet doGet :49 - logging Servlet Path:: /list
+2022-06-02 23:01:34 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/list
+2022-06-02 23:01:34 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:01:34 INFO  UserServlet listUser :145 - in listUser method
+2022-06-02 23:01:34 INFO  UserServlet sessionUser :200 - in sessionUser method
+2022-06-02 23:01:34 DEBUG UserServlet sessionUser :202 - Logging servlet context: User Management Web Application
+2022-06-02 23:01:34 INFO  UserDao selectAllUsers :83 - in selectAllUsers method
+2022-06-02 23:01:34 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:01:34 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:01:34 DEBUG UserServlet listUser :151 - logging listUSer: [User{id=8, name='Bob', email='bob@gmail.com', password='bob', role='Administrator', status='Active', created_date='2022-05-31 21:14:53', updated_date='2022-06-02 22:58:24'}, User{id=10, name='joe', email='joe@gmail.com', password='joe', role='Sales', status='Active', created_date='2022-06-01 09:48:09', updated_date='2022-06-02 23:01:09'}, User{id=12, name='rock', email='rock@gmail.com', password='rock', role='General User', status='Active', created_date='2022-06-01 10:16:44', updated_date='null'}, User{id=42, name='lee', email='lee@gmail.com', password='lee', role='Sales', status='Active', created_date='2022-06-02 22:51:19', updated_date='2022-06-02 22:53:13'}, User{id=43, name='leo', email='leo@gmail.com', password='1234', role='Marketing', status='Inactive', created_date='2022-06-02 23:01:33', updated_date='null'}]
+2022-06-02 23:01:58 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:01:58 DEBUG UserServlet doGet :49 - logging Servlet Path:: /download
+2022-06-02 23:01:58 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/download
+2022-06-02 23:01:58 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:01:58 INFO  UserServlet downloadUserList :106 - in downloadUserList method
+2022-06-02 23:01:58 INFO  DownloadUtil generateDownloadTasksExcel :20 - in generateDownloadTasksExcel method 
+2022-06-02 23:01:58 INFO  DownloadUtil populateWorkBookData :126 - in populateWorkBookData method 
+2022-06-02 23:01:58 INFO  UserDao selectAllUsers :83 - in selectAllUsers method
+2022-06-02 23:01:58 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:01:58 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:01:58 DEBUG UserServlet downloadUserList :109 - logging status: 200
+2022-06-02 23:01:58 DEBUG UserServlet downloadUserList :110 - logging HeaderNames: []
+2022-06-02 23:01:58 DEBUG UserServlet downloadUserList :111 - logging HeaderNames: application/vnd.ms-excel
+2022-06-02 23:01:58 DEBUG UserServlet downloadUserList :114 - File Downloaded Successfully...
+2022-06-02 23:02:46 INFO  UserServlet doPost :41 - in doPost method
+2022-06-02 23:02:46 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:02:46 DEBUG UserServlet doGet :49 - logging Servlet Path:: /upload
+2022-06-02 23:02:46 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/upload
+2022-06-02 23:02:46 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:02:46 INFO  UserServlet upload :99 - in upload method
+2022-06-02 23:02:46 INFO  UploadUtil uploadFile :15 - in uploadFile method
+2022-06-02 23:02:46 DEBUG UploadUtil uploadFile :39 - File Uploaded Successfully...
+2022-06-02 23:02:46 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:02:46 DEBUG UserServlet doGet :49 - logging Servlet Path:: /list
+2022-06-02 23:02:46 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/list
+2022-06-02 23:02:46 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:02:46 INFO  UserServlet listUser :145 - in listUser method
+2022-06-02 23:02:46 INFO  UserServlet sessionUser :200 - in sessionUser method
+2022-06-02 23:02:46 DEBUG UserServlet sessionUser :202 - Logging servlet context: User Management Web Application
+2022-06-02 23:02:46 INFO  UserDao selectAllUsers :83 - in selectAllUsers method
+2022-06-02 23:02:46 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:02:46 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:02:46 DEBUG UserServlet listUser :151 - logging listUSer: [User{id=8, name='Bob', email='bob@gmail.com', password='bob', role='Administrator', status='Active', created_date='2022-05-31 21:14:53', updated_date='2022-06-02 22:58:24'}, User{id=10, name='joe', email='joe@gmail.com', password='joe', role='Sales', status='Active', created_date='2022-06-01 09:48:09', updated_date='2022-06-02 23:01:09'}, User{id=12, name='rock', email='rock@gmail.com', password='rock', role='General User', status='Active', created_date='2022-06-01 10:16:44', updated_date='null'}, User{id=42, name='lee', email='lee@gmail.com', password='lee', role='Sales', status='Active', created_date='2022-06-02 22:51:19', updated_date='2022-06-02 22:53:13'}, User{id=43, name='leo', email='leo@gmail.com', password='1234', role='Marketing', status='Inactive', created_date='2022-06-02 23:01:33', updated_date='null'}]
+2022-06-02 23:03:04 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:03:04 DEBUG UserServlet doGet :49 - logging Servlet Path:: /list
+2022-06-02 23:03:04 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/list
+2022-06-02 23:03:04 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:03:04 INFO  UserServlet listUser :145 - in listUser method
+2022-06-02 23:03:04 INFO  UserServlet sessionUser :200 - in sessionUser method
+2022-06-02 23:03:04 DEBUG UserServlet sessionUser :202 - Logging servlet context: User Management Web Application
+2022-06-02 23:03:04 INFO  UserDao selectAllUsers :83 - in selectAllUsers method
+2022-06-02 23:03:04 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:03:04 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:03:04 DEBUG UserServlet listUser :151 - logging listUSer: [User{id=8, name='Bob', email='bob@gmail.com', password='bob', role='Administrator', status='Active', created_date='2022-05-31 21:14:53', updated_date='2022-06-02 22:58:24'}, User{id=10, name='joe', email='joe@gmail.com', password='joe', role='Sales', status='Active', created_date='2022-06-01 09:48:09', updated_date='2022-06-02 23:01:09'}, User{id=12, name='rock', email='rock@gmail.com', password='rock', role='General User', status='Active', created_date='2022-06-01 10:16:44', updated_date='null'}, User{id=42, name='lee', email='lee@gmail.com', password='lee', role='Sales', status='Active', created_date='2022-06-02 22:51:19', updated_date='2022-06-02 22:53:13'}, User{id=43, name='leo', email='leo@gmail.com', password='1234', role='Marketing', status='Inactive', created_date='2022-06-02 23:01:33', updated_date='null'}]
+2022-06-02 23:03:20 INFO  UserServlet doPost :41 - in doPost method
+2022-06-02 23:03:20 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:03:20 DEBUG UserServlet doGet :49 - logging Servlet Path:: /delete
+2022-06-02 23:03:20 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/delete
+2022-06-02 23:03:20 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:03:20 INFO  UserServlet deleteUser :269 - in deleteUser method
+2022-06-02 23:03:20 INFO  UserDao deleteUser :169 - in deleteUser method
+2022-06-02 23:03:20 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:03:20 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:03:20 DEBUG UserServlet deleteUser :272 - Logging delete user with id: 43
+2022-06-02 23:03:20 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:03:20 DEBUG UserServlet doGet :49 - logging Servlet Path:: /list
+2022-06-02 23:03:20 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/list
+2022-06-02 23:03:20 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:03:20 INFO  UserServlet listUser :145 - in listUser method
+2022-06-02 23:03:20 INFO  UserServlet sessionUser :200 - in sessionUser method
+2022-06-02 23:03:20 DEBUG UserServlet sessionUser :202 - Logging servlet context: User Management Web Application
+2022-06-02 23:03:20 INFO  UserDao selectAllUsers :83 - in selectAllUsers method
+2022-06-02 23:03:20 INFO  DBUtil getConnection :19 -  in getConnection method
+2022-06-02 23:03:20 DEBUG DBUtil getConnection :24 - Connection established..
+2022-06-02 23:03:20 DEBUG UserServlet listUser :151 - logging listUSer: [User{id=8, name='Bob', email='bob@gmail.com', password='bob', role='Administrator', status='Active', created_date='2022-05-31 21:14:53', updated_date='2022-06-02 22:58:24'}, User{id=10, name='joe', email='joe@gmail.com', password='joe', role='Sales', status='Active', created_date='2022-06-01 09:48:09', updated_date='2022-06-02 23:01:09'}, User{id=12, name='rock', email='rock@gmail.com', password='rock', role='General User', status='Active', created_date='2022-06-01 10:16:44', updated_date='null'}, User{id=42, name='lee', email='lee@gmail.com', password='lee', role='Sales', status='Active', created_date='2022-06-02 22:51:19', updated_date='2022-06-02 22:53:13'}]
+2022-06-02 23:03:24 INFO  UserServlet doGet :47 - in doGet method
+2022-06-02 23:03:24 DEBUG UserServlet doGet :49 - logging Servlet Path:: /logout
+2022-06-02 23:03:24 DEBUG UserServlet doGet :50 - logging  RequestURI: /userinfo-module/logout
+2022-06-02 23:03:24 DEBUG UserServlet doGet :51 - logging Context Path: /userinfo-module
+2022-06-02 23:03:24 INFO  UserServlet logoutUser :212 - in logoutUser method

@@ -3,6 +3,7 @@ package com.saitej.dao;
 import com.saitej.model.User;
 import com.saitej.util.DBUtil;
 import com.saitej.util.DateUtil;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
+
+	private static Logger LOGGER = Logger.getLogger(UserDao.class);
 	private static final String INSERT_USERS_SQL = "INSERT INTO users"
 			+ "  (name, email, password, role, status,created_date) VALUES " + " (?, ?, ?, ?, ?,?);";
 	private static final String REGISTER_USER =  "INSERT INTO users(name, email, password, role, status,created_date)VALUES(?, ?, ?, ?, ?,?)";
@@ -24,6 +27,7 @@ public class UserDao {
 	private static final String UPDATE_USERS_SQL = "UPDATE USERS SET NAME = ?,EMAIL= ?, PASSWORD= ?, ROLE= ?, STATUS =?,UPDATED_DATE=? WHERE ID = ?;";
 
 	public User loginUser(String email, String password) {
+		LOGGER.info("in loginUser method");
 		User user = null;
 		/* try with resource */
 
@@ -56,6 +60,7 @@ public class UserDao {
 	}
 
 	public void insertUser(User user) throws SQLException {
+		LOGGER.info("in insertUser method");
 		System.out.println(INSERT_USERS_SQL);
 		// try-with-resource statement will auto close the connection.
 		try (Connection connection = DBUtil.getConnection();
@@ -74,6 +79,7 @@ public class UserDao {
 	}
 
 	public List<User> selectAllUsers() {
+		LOGGER.info("in selectAllUsers method");
 
 		// using try-with-resources to avoid closing resources (boiler plate code)
 		List<User> users = new ArrayList<>();
@@ -105,6 +111,7 @@ public class UserDao {
 	}
 
 	public User selectUser(Long id) {
+		LOGGER.info("in selectUser method");
 		User user = null;
 		// Step 1: Establishing a Connection
 		try (Connection connection = DBUtil.getConnection();
@@ -131,6 +138,7 @@ public class UserDao {
 	}
 
 	public User selectUser(String email, String role) {
+		LOGGER.info("in selectUser method");
 		User user = null;
 		// Step 1: Establishing a Connection
 		try (Connection connection = DBUtil.getConnection();
@@ -157,6 +165,7 @@ public class UserDao {
 	}
 
 	public boolean deleteUser(int id) throws SQLException {
+		LOGGER.info("in deleteUser method");
 		boolean rowDeleted;
 		try (Connection connection = DBUtil.getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL);) {
@@ -167,6 +176,7 @@ public class UserDao {
 	}
 
 	public boolean 	updateUser(User user) throws SQLException {
+		LOGGER.info("in updateUser method");
 		boolean rowUpdated;
 		try (Connection connection = DBUtil.getConnection();
 				PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
@@ -185,6 +195,7 @@ public class UserDao {
 	}
 
 	private void printSQLException(SQLException ex) {
+		LOGGER.info("in printSQLException method");
 		for (Throwable e : ex) {
 			if (e instanceof SQLException) {
 				e.printStackTrace(System.err);
@@ -201,7 +212,7 @@ public class UserDao {
 	}
 
 	public int registerUser(User user) {
-		System.out.println("UserDao.registerUser");
+		LOGGER.info("in registerUser method");
 		int count = 0;
 		Connection con = DBUtil.getConnection();
 		try {
@@ -214,7 +225,7 @@ public class UserDao {
 			ps.setString(6, DateUtil.format(LocalDateTime.now()));
 			count = ps.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error("Loggig error: "+e.getMessage());
 		}
 		return count;
 	}

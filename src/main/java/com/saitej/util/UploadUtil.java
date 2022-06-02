@@ -3,13 +3,16 @@ package com.saitej.util;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.List;
 
 public class UploadUtil {
+    private static Logger LOGGER = Logger.getLogger(UploadUtil.class);
     public static void uploadFile(HttpServletRequest request) {
+        LOGGER.info("in uploadFile method");
         String UPLOAD_DIRECTORY = "D:/uploads";
        boolean isMultipart;
        int maxFileSize=850000*1024;
@@ -33,7 +36,7 @@ public class UploadUtil {
                     }
                 }
 
-                //File uploaded successfully
+                LOGGER.debug("File Uploaded Successfully...");
 
                 request.setAttribute("isUploadSuccess", true);
             } catch (Exception ex) {

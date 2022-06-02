@@ -3,6 +3,7 @@ package com.saitej.util;
 import com.mysql.cj.util.StringUtils;
 import com.saitej.dao.UserDao;
 import com.saitej.model.User;
+import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.BorderStyle;
@@ -14,8 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public class DownloadUtil {
+    private static Logger LOGGER = Logger.getLogger(DownloadUtil.class);
     public static HSSFWorkbook generateDownloadTasksExcel(HttpServletRequest request) {
-        System.out.println("UserServlet.generateDownloadTasksExcel");
+        LOGGER.info("in generateDownloadTasksExcel method ");
 
         //create workbook (workbook is a group of worksheets)
         HSSFWorkbook workbook = new HSSFWorkbook();
@@ -121,7 +123,7 @@ public class DownloadUtil {
     }
 
     private static void populateWorkBookData(HSSFSheet worksheet, int dataRowIndex, HttpServletRequest request) {
-        System.out.println("UserServlet.populateWorkBookData");
+       LOGGER.info("in populateWorkBookData method ");
         UserDao userDao = new UserDao();
         List<User> users = userDao.selectAllUsers();
         System.out.println("users = " + users);
