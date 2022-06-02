@@ -3,7 +3,9 @@ package com.saitej.controller;
 import com.saitej.dao.UserDao;
 import com.saitej.model.User;
 import com.saitej.util.DownloadUtil;
+import com.saitej.util.EmailUtil;
 import com.saitej.util.UploadUtil;
+import org.apache.commons.mail.EmailException;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import javax.servlet.RequestDispatcher;
@@ -79,7 +81,7 @@ public class UserServlet extends HttpServlet {
                     showLoginForm(request, response);
                     break;
             }
-        } catch (SQLException ex) {
+        } catch (SQLException | EmailException ex) {
             throw new ServletException(ex);
         }
     }
@@ -102,7 +104,7 @@ public class UserServlet extends HttpServlet {
 
 
 
-    private void registerUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void registerUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, EmailException {
         RequestDispatcher dispatcher = null;
         User user = new User();
         user.setName(request.getParameter("name"));
@@ -119,6 +121,7 @@ public class UserServlet extends HttpServlet {
         } else {
             request.setAttribute("failed", "insert operation failed!!!");
         }
+        EmailUtil.sendMail(request);
         dispatcher.forward(request, response);
     }
 

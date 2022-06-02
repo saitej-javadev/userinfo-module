@@ -12,7 +12,7 @@ public class UploadUtil {
     public static void uploadFile(HttpServletRequest request) {
         String UPLOAD_DIRECTORY = "D:/uploads";
        boolean isMultipart;
-       int maxfileSize=850000*1024;
+       int maxFileSize=850000*1024;
        int maxMemSize = 4*1024;
        isMultipart = ServletFileUpload.isMultipartContent(request);
 
@@ -22,7 +22,7 @@ public class UploadUtil {
                 fileItemFactory.setSizeThreshold(maxMemSize);
                 fileItemFactory.setRepository(new File("C:\\temp"));
                 ServletFileUpload servletFileUpload = new ServletFileUpload(fileItemFactory);
-                servletFileUpload.setSizeMax(maxfileSize);
+                servletFileUpload.setSizeMax(maxFileSize);
 
                 List<FileItem> multiParts = servletFileUpload.parseRequest(request);
 
