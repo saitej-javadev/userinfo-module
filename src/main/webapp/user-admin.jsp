@@ -25,6 +25,12 @@
         <%@include file="/resources/js/bootstrap.min.js" %>
     </script>--%>
     <style type="text/css">
+        button, input {
+            overflow: visible;
+            color: black;
+        }
+
+        but
         body {
             color: #566787;
             background: #ebebeb;
